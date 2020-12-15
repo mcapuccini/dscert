@@ -1,0 +1,14 @@
+{
+    "name": "dscert",
+    "dockerFile": "../Dockerfile",
+    "remoteUser": "default",
+    "settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"python.pythonPath": "/opt/miniconda/bin/python"
+	},
+	"extensions": [
+		"ms-python.python",
+		"ms-azuretools.vscode-docker"
+	],
+	"mounts": ["source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/default/.ssh,type=bind,consistency=default"]
+}
