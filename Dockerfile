@@ -24,8 +24,11 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     # pip deps
     && pip install azureml-sdk[notebooks,automl,explain] \
-    # Create non-root user
+    # create non-root user
     && groupadd --gid $USER_GID $USERNAME \
     && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME
+    && chmod 0440 /etc/sudoers.d/$USERNAME \
+    # fix conda permissions
+    && mkdir /opt/miniconda/pkgs \
+    && chown -R $USER_UID:$USER_GID /opt/miniconda/pkgs
