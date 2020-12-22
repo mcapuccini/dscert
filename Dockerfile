@@ -23,7 +23,9 @@ RUN apt-get update \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* \
     # pip deps
-    && pip install azureml-sdk[notebooks,automl,explain] \
+    && pip install \
+        azureml-sdk[notebooks,automl,explain] \
+        pylint \
     # create non-root user
     && groupadd --gid $USER_GID $USERNAME \
     && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
