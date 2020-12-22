@@ -26,6 +26,7 @@ RUN apt-get update \
     && pip install \
         azureml-sdk[notebooks,automl,explain] \
         pylint \
+        werkzeug==0.16.1 \
     # create non-root user
     && groupadd --gid $USER_GID $USERNAME \
     && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
