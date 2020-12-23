@@ -1,0 +1,91 @@
+2020-12-23 14:47:53.451 - INFO - 34940 - azureml.train.automl.automlconfig._start_execution:207 - Submitting remote.
+2020-12-23 15:00:30.841 - INFO - 34940 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2020-12-23 15:00:30.852 - INFO - 34940 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2020-12-23 15:00:30.858 - INFO - 34940 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2020-12-23 15:00:31.362 - INFO - 34940 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=503.62[ms]
+2020-12-23 15:00:31.362 - INFO - 34940 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=510.86[ms]
+2020-12-23 15:00:31.363 - INFO - 34940 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
+2020-12-23 15:00:32.999 - CRITICAL - 34940 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: PermissionError
+Message: [Errno 1] Operation not permitted: '/opt/miniconda/lib/python3.7/site-packages/nimbusml/internal/libs/pybridge.so'
+Traceback:
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+  File "__init__.py", line 8, in <module>
+    from .data_transformer import DataTransformer, TransformerAndMapper
+  File "data_transformer.py", line 17, in <module>
+    from azureml.automl.runtime.column_purpose_detection import ColumnPurposeDetector
+  File "__init__.py", line 6, in <module>
+    from .types import StatsAndColumnPurposeType
+  File "types.py", line 7, in <module>
+    from azureml.automl.runtime.stats_computation import RawFeatureStats
+  File "__init__.py", line 5, in <module>
+    from .raw_stats import RawFeatureStats, PreprocessingStatistics
+  File "raw_stats.py", line 15, in <module>
+    from azureml.automl.runtime.shared.utilities import _get_num_unique
+  File "utilities.py", line 23, in <module>
+    from nimbusml.internal.utils.entrypoints import BridgeRuntimeError
+  File "__init__.py", line 33, in <module>
+    os.chmod(dotso, 0o755)
+
+ExceptionTarget: Unspecified
+2020-12-23 15:00:33.003 - CRITICAL - 34940 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: PermissionError
+Message: [Errno 1] Operation not permitted: '/opt/miniconda/lib/python3.7/site-packages/nimbusml/internal/libs/pybridge.so'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+  File "__init__.py", line 8, in <module>
+    from .data_transformer import DataTransformer, TransformerAndMapper
+  File "data_transformer.py", line 17, in <module>
+    from azureml.automl.runtime.column_purpose_detection import ColumnPurposeDetector
+  File "__init__.py", line 6, in <module>
+    from .types import StatsAndColumnPurposeType
+  File "types.py", line 7, in <module>
+    from azureml.automl.runtime.stats_computation import RawFeatureStats
+  File "__init__.py", line 5, in <module>
+    from .raw_stats import RawFeatureStats, PreprocessingStatistics
+  File "raw_stats.py", line 15, in <module>
+    from azureml.automl.runtime.shared.utilities import _get_num_unique
+  File "utilities.py", line 23, in <module>
+    from nimbusml.internal.utils.entrypoints import BridgeRuntimeError
+  File "__init__.py", line 33, in <module>
+    os.chmod(dotso, 0o755)
+
+ExceptionTarget: Unspecified
+2020-12-23 15:00:33.003 - INFO - 34940 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Failure, Duration=1640.39[ms]
+2020-12-23 15:00:33.005 - CRITICAL - 34940 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: PermissionError
+Message: [Errno 1] Operation not permitted: '/opt/miniconda/lib/python3.7/site-packages/nimbusml/internal/libs/pybridge.so'
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 694, in get_output
+    fitted_model = _download_automl_model(curr_run, model_name)
+  File "_model_download_utilities.py", line 87, in _download_automl_model
+    model = _load_automl_model(model_path)
+  File "_model_download_utilities.py", line 153, in _load_automl_model
+    fitted_model = pickle.load(model_file)  # type: Optional[Any]
+  File "__init__.py", line 8, in <module>
+    from .data_transformer import DataTransformer, TransformerAndMapper
+  File "data_transformer.py", line 17, in <module>
+    from azureml.automl.runtime.column_purpose_detection import ColumnPurposeDetector
+  File "__init__.py", line 6, in <module>
+    from .types import StatsAndColumnPurposeType
+  File "types.py", line 7, in <module>
+    from azureml.automl.runtime.stats_computation import RawFeatureStats
+  File "__init__.py", line 5, in <module>
+    from .raw_stats import RawFeatureStats, PreprocessingStatistics
+  File "raw_stats.py", line 15, in <module>
+    from azureml.automl.runtime.shared.utilities import _get_num_unique
+  File "utilities.py", line 23, in <module>
+    from nimbusml.internal.utils.entrypoints import BridgeRuntimeError
+  File "__init__.py", line 33, in <module>
+    os.chmod(dotso, 0o755)
+
+ExceptionTarget: Unspecified
+2020-12-23 15:00:33.006 - INFO - 34940 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=2164.76[ms]
